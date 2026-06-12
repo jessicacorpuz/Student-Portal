@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICCT Student Portal - Create Account</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:linear-gradient(
+    135deg,
+    #0F4C81 0%,
+    #1E5FA8 45%,
+    #6CA6E8 100%
+    );
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+}
+
+.card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(15,76,129,0.15);
+    border-top:6px solid #0F4C81;
+}
+
+.header{
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:#0F4C81;
+    font-size:32px;
+    font-weight:700;
+}
+
+.header p{
+    color:#6b7280;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    font-size:14px;
+    font-weight:500;
+    color:#374151;
+    margin-bottom:8px;
+}
+
+.required{
+    color:#dc2626;
+}
+
+input,
+select{
+    width:100%;
+    padding:13px 15px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:14px;
+    transition:.3s;
+    outline:none;
+}
+
+input:focus,
+select:focus{
+    border-color:#0F4C81;
+    box-shadow:0 0 0 4px rgba(15,76,129,.15);
+}
+
+.terms{
+    margin-top:25px;
+    text-align:center;
+    font-size:14px;
+    color:#4b5563;
+}
+
+.terms a{
+    color:#0F4C81;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.button-container{
+    text-align:center;
+    margin-top:25px;
+}
+
+button{
+    background:#0F4C81;
+    color:white;
+    border:none;
+    padding:14px 40px;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    width:280px;
+}
+
+button:hover{
+    background:#0C3D67;
+    transform:translateY(-2px);
+}
+
+@media(max-width:768px){
+
+    .card{
+        padding:25px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .header h1{
+        font-size:26px;
+    }
+
+    button{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="header">
+            <h1>Create Your Account</h1>
+            <p>Enter your student information to continue.</p>
+        </div>
+
+        <form>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>
+                        Student / Staff ID
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" placeholder="Enter your ID">
+                </div>
+
+                <div class="form-group">
+                    <label>School Campus</label>
+                    <select>
+                        <option>Select Campus</option>
+                        <option>Antipolo Campus</option>
+                        <option>Cainta Campus</option>
+                        <option>San Mateo Campus</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Institutional Email
+                        <span class="required">*</span>
+                    </label>
+                    <input type="email" placeholder="example@icct.edu.ph">
+                </div>
+
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Password
+                        <span class="required">*</span>
+                    </label>
+                    <input type="password" placeholder="Enter password">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Department / Program
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" placeholder="BSIT, BSHM, BSBA, etc.">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Confirm Password
+                        <span class="required">*</span>
+                    </label>
+                    <input type="password" placeholder="Confirm password">
+                </div>
+
+            </div>
+
+            <div class="terms">
+                <input type="checkbox">
+                I agree to the
+                <a href="#">Terms of Service</a>
+                and
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <div class="button-container">
+                <button type="submit">
+                    Create Account
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
