@@ -1,57 +1,107 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Student Academic Information System</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Academic Information System – ICCT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
 </head>
-
 <body>
+  <div class="page">
+    <div class="card">
 
-<div class="left">
-    <div class="logo">
-        <img src="https://jaredbona.github.io/emt-project/img/ICCT.png" width="200">
-        <h1>ICCT</h1>
-        <p>Student Academic Information System</p>
-    </div>
-</div>
-
-<div class="right">
-    <div class="navbar">
-        <button onclick="showsection('home')">Home</button>
-        <button onclick="showsection('aboutus')">About Us</button>
-        <button onclick="showsection('dashboard')">Student Dashboard</button>
-        <button onclick="showsection('notification')"><img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/bell-line-icon.png" width="15"></button>
-        <button onclick="showsection('helpcenter')">Help Center</button>
-    </div>
-
-    <div id="login" class="section active">
-        <div class="login">
-            <h2>Login</h2>
-            <input type="studentnumber" placeholder="Student Number">
-            <input type="password" placeholder="Password">
-            <button class="mainbutton" onclick="login()">Login</button>
-        </div>
-    </div>
     
-    <div id="home" class="section active">
-        <img src="https://icct.edu.ph/wp-content/uploads/2018/12/Antipolo.png">
-        <p>welcome students to SAIS</p>
-        <h2>newsletters</h2>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FNewsbytesICCT%2Fposts%2Fpfbid0Zfhmqis1TESWvPM8DiPRtimsE2CDhmdUmFgatENw8at8TtsuMhrt1xJYgGU4F8rVl&show_text=true&width=500" width="500" height="811" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> 
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FNewsbytesICCT%2Fposts%2Fpfbid02Jq21vWY7P36zZ7hUxhR6Zu8CAHcUhiJRMtCPSmQt87nkECkxnrvszbxTvxy58Rnml&show_text=true&width=500" width="500" height="811" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FNewsbytesICCT%2Fposts%2Fpfbid0NanRGcjn98bWRrJQF8ihBhW47Vm5bGqmJcA38YukJYW4qe6ohYtSzMhECAFmN8Wsl&show_text=true&width=500" width="500" height="811" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FIM4ICCT%2Fposts%2Fpfbid0iQf5gegrsipy41F6ejSj9NxV5gD8j6hQFDEAqEpbFKpn3Q48X9bMZCFWN2UqRmEl&show_text=true&width=500" width="500" height="576" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FIM4ICCT%2Fposts%2Fpfbid02Un5rfQZEtLatjBowkTiJ5ieDzkBBy9YqHyHzVXWpVifhLNN4TDMpYxBMt5X8hYecl&show_text=true&width=500" width="500" height="576" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FNewsbytesICCT%2Fposts%2Fpfbid02s5ZxbodvVX7BQyFenAYQppMYCY2VPM7aCX9o82Wu1ynbVG8PpkFRFw43FuLRDYosl&show_text=true&width=500" width="500" height="811" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-    </div>
+      <div class="panel-left">
+        <img class="bg-img"
+             src="https://icct.edu.ph/wp-content/uploads/2018/12/Antipolo.png"
+             alt="ICCT Antipolo Campus">
+        <div class="overlay"></div>
+
+        <div class="logo-row">
+          <img src="https://jaredbona.github.io/emt-project/img/ICCT.png" alt="ICCT Logo">
+          <span>ICCT Colleges<br>Antipolo Campus</span>
+        </div>
+
+        <div class="hero-text">
+          <h2>Welcome Back</h2>
+          <p>Access your grades, schedule, and announcements all in one place.</p>
+          <div class="feature-pills">
+
+            <div class="pill" onclick="alert('Redirecting to Modules…')">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v9a1 1 0 01-1 1H3a1 1 0 01-1-1V4z" stroke="white" stroke-width="1.4"/><path d="M1 2h14" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+              Explore Modules
+            </div>
+
+            <div class="pill" onclick="alert('Redirecting to Grades…')">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1" stroke="white" stroke-width="1.4"/><path d="M5 8h6M5 5h6M5 11h4" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+              Track Grades
+            </div>
+
+            <div class="pill" onclick="alert('Redirecting to Notifications…')">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 2a6 6 0 100 12A6 6 0 008 2z" stroke="white" stroke-width="1.4"/><path d="M8 5v3l2 2" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+              Stay Notified
+            </div>
+
+          </div>
+        </div>
+      </div>
 
       
+      <div class="panel-right">
+        <h1>Sign in to your account</h1>
+        <p class="subtitle">Enter your student ID and password to continue</p>
 
+        <div class="form-group">
+          <label for="studentId">Student / Staff ID</label>
+          <input id="studentId" type="text" placeholder="Enter your ID / Email" autocomplete="username">
+        </div>
 
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Enter password" autocomplete="current-password">
+        </div>
 
-</div>
+        <div class="remember-row">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div>
+       <a href="home.html" class="btn-login">
+        <button class="btn-login" onclick="handleLogin()">Log in</button>
+         </a>
+          
+        
 
-<script src="script.js"></script>
+        <div class="forgot-link"><a href="#">Forgot password</a></div>
+
+        <div class="divider"><hr><span>or</span><hr></div>
+        <a href="register.html" class="btn-create">
+            <button class="btn-create" onclick="handleCreateAccount()">Create Account</button>
+        </a>
+        
+
+        <div class="help-link">Need help? <a href="#">Contact support</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const id = document.getElementById('studentId').value.trim();
+      const pw = document.getElementById('password').value.trim();
+      if (!id || !pw) {
+        alert('Please enter your Student ID and password.');
+        return;
+      }
+      alert('Logging in as: ' + id);
+    }
+
+    function handleCreateAccount() {
+      alert('Redirecting to account registration…');
+    }
+  </script>
 </body>
 </html>
