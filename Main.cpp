@@ -14,7 +14,7 @@ int main()
     do
     {
         cout << "\n==============================" << endl;
-        cout << " ICCT COLLEGES TOUR & WEBSITE " << endl;
+        cout << " ICCT COLLEGES TOUR & STUDENT PORTAL " << endl;
         cout << "==============================" << endl;
         cout << "About - About Us" << endl;
         cout << "Tour - Campus Tour" << endl;
