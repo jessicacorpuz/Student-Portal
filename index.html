@@ -78,8 +78,9 @@
         <div class="forgot-link"><a href="#">Forgot password</a></div>
 
         <div class="divider"><hr><span>or</span><hr></div>
-        <a href="assets/register.html" class="btn-create">
-            <button class="btn-create" onclick="handleCreateAccount()">Create Account</button>
+        <button class="btn-create" onclick="showRegister()">
+        Create Account
+        </button>
         </a>
         
 
@@ -89,6 +90,87 @@
     </div>
     </div>
     
+    <div id="registerPage" style="display:none;">
+    <div class="page">
+        <div class="card">
+
+            <div class="card-header">
+                <h1>Create Your Account</h1>
+                <p class="subtitle">Enter your student information</p>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-col">
+
+                    <div class="form-group">
+                        <label>Student ID</label>
+                        <input id="regStudentId" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input id="regFullname" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="date">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Department</label>
+                        <input id="regDepartment" type="text">
+                    </div>
+
+                </div>
+
+                <div class="form-col">
+
+                    <div class="form-group">
+                        <label>Campus</label>
+                        <input type="text" value="Antipolo Campus">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input id="regEmail" type="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input id="regPassword" type="password">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input id="regConfirmPassword" type="password">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="terms-row">
+                <input type="checkbox" id="terms">
+                <label>I agree to Terms and Privacy Policy</label>
+            </div>
+
+            <div class="btn-row">
+                <button class="btn-create" onclick="handleRegister()">
+                    Create Account
+                </button>
+            </div>
+
+            <div class="login-link">
+                Already have an account?
+                <a href="#" onclick="showLogin()">Sign In</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
     <div id="portal" style="display:none;">
 
         <header class="topbar">
@@ -105,9 +187,42 @@
             </div>
 
             <div class="top-icons">
-                <button onclick="showSection('notifications')"><img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/bell-line-icon.png" width="25"></button>
-                <img src="https://i.pinimg.com/736x/05/03/70/050370daeff834ddd5aaf12d5636c0fb.jpg" class="profile">
+
+    <div class="notification-container">
+
+        <button id="notifBtn">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/bell-line-icon.png" width="25">
+            <span class="notif-badge">3</span>
+        </button>
+
+        <div id="notificationPopup" class="notification-popup">
+            <h3>Notifications</h3>
+
+            <div class="notification-item">
+                New grade has been posted.
             </div>
+
+            <div class="notification-item">
+                Enrollment starts next week.
+            </div>
+
+            <div class="notification-item">
+                New announcement from Registrar.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="user-info">
+    <img src="profile.jpg" class="profile">
+
+    <div>
+        <h4 id="userName">Student Name</h4>
+        <p>Student Portal</p>
+    </div>
+</div>
+
+</div>
         </header>
 
         <div class="portal-container">
