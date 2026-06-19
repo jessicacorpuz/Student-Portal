@@ -14,8 +14,13 @@ function handleLogin() {
     showSection("home");
 }
 
-const SUPABASE_URL = "https://jdtwbiiuimbhozdqrcvn.supabase.co/rest/v1/";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpkdHdiaWl1aW1iaG96ZHFyY3ZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4MTE5NDIsImV4cCI6MjA5NzM4Nzk0Mn0.8qDaxtDB7H0lr3bkIdZpMIC7Mwqx2BtMXiIbGIv8fa0";
+const supabaseUrl = "https://jdtwbiiuimbhozdqrcvn.supabase.co/rest/v1/";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpkdHdiaWl1aW1iaG96ZHFyY3ZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4MTE5NDIsImV4cCI6MjA5NzM4Nzk0Mn0.8qDaxtDB7H0lr3bkIdZpMIC7Mwqx2BtMXiIbGIv8fa0";
+
+const supabase = window.supabase.createClient(
+    supabaseUrl,
+    supabaseKey
+);
 
 function handleLogin(){
 
