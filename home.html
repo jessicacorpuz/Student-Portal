@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal – ICCT SAIS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <img src="ICCT LOGO.jpg" alt="ICCT Logo" class="topbar-logo">
+      <div class="topbar-title">
+        <span class="portal-name">Student Portal</span>
+        <span class="portal-sub">Student Academic Information System</span>
+      </div>
+    </div>
+    <div class="topbar-center">
+      <div class="search-box">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Search...">
+      </div>
+    </div>
+    <div class="topbar-right">
+      <button class="hamburger" id="hamburger" onclick="toggleSidebar()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="notif-btn" onclick="toggleNotif(event)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="notif-dot"></span>
+        <div class="notif-dropdown" id="notifDropdown">
+          <div class="notif-title">Notifications</div>
+          <div class="notif-item">📢 Final Exam schedule released</div>
+          <div class="notif-item">💰 Tuition deadline on June 20</div>
+          <div class="notif-item">📝 Lab Report due June 20</div>
+        </div>
+      </div>
+      <div class="profile-trigger" id="profileTrigger">
+        <div class="user-avatar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="white" stroke-width="1.8"/><circle cx="12" cy="7" r="4" stroke="white" stroke-width="1.8"/></svg>
+        </div>
+        <div class="user-info hide-mobile">
+          <span class="user-name">USER</span>
+          <span class="user-id">UA9103104103</span>
+        </div>
+        <svg class="hide-mobile" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <div class="profile-dropdown" id="profileDropdown">
+        <div class="dropdown-header">
+          <span>USER</span>
+          <small>UA9103104103</small>
+        </div>
+        <a href="#" class="dropdown-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/></svg>
+          My Profile
+        </a>
+        <a href="#" class="dropdown-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          My Grades
+        </a>
+        <a href="#" class="dropdown-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="1.8"/></svg>
+          Settings
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="index.html" class="dropdown-item danger">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Log Out
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div>
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item active" onclick="showPage('home', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.8"/><path d="M9 21V12h6v9" stroke="currentColor" stroke-width="1.8"/></svg>
+            Home
+          </a>
+          <a href="#" class="nav-item" onclick="showPage('about', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 3h18v18H3V3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="1.8"/></svg>
+            About us
+          </a>
+          <a href="#" class="nav-item" onclick="showPage('studentdash', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M9 3v18" stroke="currentColor" stroke-width="1.8"/></svg>
+            Student dashboard
+          </a>
+          <a href="#" class="nav-item" onclick="showPage('notification', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Notification
+          </a>
+          <a href="#" class="nav-item" onclick="showPage('helpcenter', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Help Center
+          </a>
+        </nav>
+      </div>
+      <div class="sidebar-bottom">
+        <a href="#" class="nav-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="1.8"/></svg>
+          Setting
+        </a>
+        <a href="index.html" class="nav-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Log Out
+        </a>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <!-- HOME PAGE -->
+      <div id="page-home" class="page-section">
+
+        <!-- HERO BANNER -->
+        <div class="hero-banner">
+          <img src="icct campus.jpg" alt="ICCT Campus" class="hero-img">
+          <div class="hero-overlay"></div>
+          <div class="hero-wave">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="rgba(45,111,173,0.85)"/>
+            </svg>
+          </div>
+          <div class="hero-content">
+            <p class="hero-welcome">Welcome to</p>
+            <h1 class="hero-title">ICCT COLLEGES</h1>
+            <p class="hero-sub">Empowering minds <span class="hero-highlight">building future</span></p>
+            <p class="hero-desc">A Community committed to academic excellence,<br>values information and lifelong learning</p>
+          </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="home-about">
+          <p class="home-about-eyebrow">Welcome to</p>
+          <h2 class="home-about-title">ICCT COLLEGES</h2>
+          <p class="home-about-text">ICCT Colleges is a premier educational institution in Antipolo City committed to providing quality and affordable education. We nurture students to become globally competitive professionals through excellence in instruction, research, and community service.</p>
+        </div>
+
+        <!-- PROGRAMS / COURSES OFFERED -->
+        <div class="programs-section">
+          <h2 class="programs-title">PROGRAMS / COURSE OFFERED</h2>
+          <div class="programs-grid">
+
+            <!-- College of Health Science -->
+            <!-- Icon: Heart by Good Ware – Flaticon (https://www.flaticon.com/free-icons/heart) -->
+            <div class="program-card">
+              <div class="program-icon">
+                <img
+                  src="heart.png"
+                  alt="Health Science icon"
+                  width="36"
+                  height="36"
+                  style="object-fit:contain;"
+                >
+              </div>
+              <div class="program-name">College of<br>Health Science</div>
+            </div>
+
+            <!-- College of Teacher Education -->
+            <!-- Icon: Student by Muhammad Atif – Flaticon (https://www.flaticon.com/free-icons/student) -->
+            <div class="program-card">
+              <div class="program-icon">
+                <img
+                  src="person book.png"
+                  alt="Teacher Education icon"
+                  width="36"
+                  height="36"
+                  style="object-fit:contain;"
+                >
+              </div>
+              <div class="program-name">College of<br>Teacher Education</div>
+            </div>
+
+            <!-- College of Business and Accountancy -->
+            <!-- Icon: Briefcase by Those Icons – Flaticon (https://www.flaticon.com/free-icons/briefcase) -->
+            <div class="program-card">
+              <div class="program-icon">
+                <img
+                  src="briefcase.png"
+                  alt="Business and Accountancy icon"
+                  width="36"
+                  height="36"
+                  style="object-fit:contain;"
+                >
+              </div>
+              <div class="program-name">College of<br>Business and Accountancy</div>
+            </div>
+
+            <!-- College of Computer Studies -->
+            <!-- Icon: Processor by Iconic Panda – Flaticon (https://www.flaticon.com/free-icons/processor) -->
+            <div class="program-card">
+              <div class="program-icon">
+                <img
+                  src="chip.png"
+                  alt="Computer Studies icon"
+                  width="36"
+                  height="36"
+                  style="object-fit:contain;"
+                >
+              </div>
+              <div class="program-name">College of<br>Computer Studies</div>
+            </div>
+
+            <!-- College of Criminology and Administration -->
+            <!-- Icon: Law by Freepik – Flaticon (https://www.flaticon.com/free-icons/law) -->
+            <div class="program-card">
+              <div class="program-icon">
+                <img
+                  src="scales-of-justice.png"
+                  alt="Criminology and Administration icon"
+                  width="36"
+                  height="36"
+                  style="object-fit:contain;"
+                >
+              </div>
+              <div class="program-name">College of<br>Criminology and Administration</div>
+            </div>
+
+            <!-- International School of Hospitality and Management -->
+            <!-- Icon: Hospitality by Freepik – Flaticon (https://www.flaticon.com/free-icons/hospitality) -->
+            <div class="program-card">
+              <div class="program-icon">
+                <img
+                  src="airplane.png"
+                  alt="Hospitality and Management icon"
+                  width="36"
+                  height="36"
+                  style="object-fit:contain;"
+                >
+              </div>
+              <div class="program-name">International School of<br>Hospitality and Management</div>
+            </div>
+
+          </div>
+
+          <div class="programs-footer">
+            <button class="btn-view-all" onclick="alert('View all programs')">View all programs</button>
+          </div>
+        </div>
+
+        <!-- NEWS & EVENTS SECTION -->
+        <div class="news-events-grid">
+
+          <!-- LEFT COLUMN: Featured News + Upcoming Events -->
+          <div class="news-events-left">
+
+            <!-- FEATURED NEWS -->
+            <div class="featured-news-card">
+              <div class="featured-news-img">
+                <img src="featured-news-1.jpg" alt="ICCT Colleges Sports Festival 2026">
+              </div>
+              <div class="featured-news-body">
+                <p class="featured-news-eyebrow">Featured News:</p>
+                <h3 class="featured-news-title">HISTORY IN THE MAKING!! ICCT Colleges Sports Festival 2026</h3>
+                <p class="featured-news-text">The entire ICCT Colleges congregate at the Marikina Sports Complex to launch the biggest sporting event of the year. A parade of color of different campus delegations and college departments marched in full display.</p>
+                <a href="#" class="featured-news-link" onclick="alert('Read More clicked'); return false;">Read More &gt;</a>
+              </div>
+            </div>
+
+            <!-- UPCOMING EVENTS -->
+            <div class="upcoming-events-card">
+              <div class="upcoming-events-header">
+                <h3>UPCOMING EVENTS</h3>
+                <span class="upcoming-events-count">4 Upcoming Events</span>
+              </div>
+              <div class="upcoming-events-grid">
+
+                <div class="event-item" onclick="alert('Final Seminar Series: COCA, COEDT & CSS')">
+                  <div class="event-icon red">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="4" stroke="white" stroke-width="1.8"/><path d="M2 21v-2a4 4 0 014-4h2a4 4 0 014 4v2" stroke="white" stroke-width="1.8"/><circle cx="17" cy="7" r="3" stroke="white" stroke-width="1.8"/><path d="M22 21v-1.5a3.5 3.5 0 00-2.5-3.36" stroke="white" stroke-width="1.8"/></svg>
+                  </div>
+                  <div class="event-info">
+                    <span class="event-name">Final Seminar Series: COCA, COEDT &amp; CSS</span>
+                    <span class="event-date">June 19 &amp; 22, 2026</span>
+                  </div>
+                </div>
+
+                <div class="event-item" onclick="alert('CSS College Day 2026')">
+                  <div class="event-icon yellow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 10L12 5 2 10l10 5 10-5z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5" stroke="white" stroke-width="1.8"/></svg>
+                  </div>
+                  <div class="event-info">
+                    <span class="event-name">CSS College Day 2026</span>
+                    <span class="event-date">June 23 to 24, 2026</span>
+                  </div>
+                </div>
+
+                <div class="event-item" onclick="alert('COEDT: Brigada Eskuwela')">
+                  <div class="event-icon green">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 11l2 2 4-4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="event-info">
+                    <span class="event-name">COEDT: Brigada Eskuwela</span>
+                    <span class="event-date">July 22 to 23, 2026</span>
+                  </div>
+                </div>
+
+                <div class="event-item" onclick="alert('The Founder\'s Day 2026')">
+                  <div class="event-icon blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.8"/><rect x="13" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.8"/><rect x="3" y="13" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.8"/><rect x="13" y="13" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.8"/></svg>
+                  </div>
+                  <div class="event-info">
+                    <span class="event-name">The Founder's Day 2026</span>
+                    <span class="event-date">July 29, 2026</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: Spotlight News -->
+          <div class="spotlight-news-card">
+            <h3 class="spotlight-title">Spotlight News</h3>
+            <div class="spotlight-img">
+              <img src="spotlight-news-1.jpg" alt="Enrollment ongoing at ICCT Colleges">
+            </div>
+            <h4 class="spotlight-headline">Enrollment Ongoing at ICCT Colleges!</h4>
+            <p class="spotlight-text">
+              1st Trimester AY2026-2027 up to July 31, 2026<br>
+              College classes start August 12, 2026<br>
+              Online Application Portal:
+              <a href="https://skolaris.icct.edu.ph" target="_blank" rel="noopener">Enrollment Ongoing at ICCT Colleges!</a>
+            </p>
+          </div>
+
+        </div>
+
+        <!-- SITE FOOTER -->
+        <footer class="site-footer">
+          <div class="footer-grid">
+
+            <div class="footer-brand">
+              <img src="ICCT LOGO.jpg" alt="ICCT Logo" class="footer-logo">
+              <div>
+                <span class="footer-brand-name">ICCT COLLEGES</span>
+                <span class="footer-brand-tag">Providing quality and accessible education.</span>
+              </div>
+            </div>
+
+            <div class="footer-col">
+              <span class="footer-col-title">Quick Links</span>
+              <a href="#" onclick="showPage('home', document.querySelector('.nav-item')); return false;">Home</a>
+              <a href="#" onclick="showPage('about', document.querySelectorAll('.nav-item')[1]); return false;">About Us</a>
+              <a href="#" onclick="alert('Campus Map'); return false;">Campus Map</a>
+              <a href="#" onclick="alert('FAQ'); return false;">FAQ</a>
+            </div>
+
+            <div class="footer-col">
+              <span class="footer-col-title">Contact Us</span>
+              <span class="footer-text">ICCT Colleges Building,<br>Sumulong Extension Street,<br>Brgy. San Roque, Antipolo City, Rizal</span>
+              <a href="tel:+6327216-4273">(632) 7216-4273</a>
+              <a href="mailto:antipolo@icct.edu.ph">antipolo@icct.edu.ph</a>
+              <a href="mailto:info@icct.edu.ph">info@icct.edu.ph</a>
+            </div>
+
+            <div class="footer-col">
+              <span class="footer-col-title">Official Pages</span>
+              <a href="#" onclick="alert('Official Website'); return false;">Official Website</a>
+            </div>
+
+            <div class="footer-col">
+              <span class="footer-col-title">Follow Us</span>
+              <div class="footer-social">
+                <a href="#" aria-label="Instagram" onclick="return false;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg>
+                </a>
+                <a href="#" aria-label="Facebook" onclick="return false;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 8h2V4h-2a4 4 0 00-4 4v2H9v4h2v8h4v-8h2.5l.5-4H15V8z" fill="white"/></svg>
+                </a>
+                <a href="#" aria-label="YouTube" onclick="return false;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="4" stroke="white" stroke-width="1.8"/><path d="M10 9l6 3-6 3V9z" fill="white"/></svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <div class="footer-bottom">
+            &copy; 2026 ICCT Colleges. All rights reserved
+          </div>
+        </footer>
+
+      </div>
+
+      <!-- ABOUT US PAGE -->
+      <div id="page-about" class="page-section" style="display:none;">
+        <div class="simple-page">
+          <h2>About Us</h2>
+          <p>ICCT Colleges is a premier educational institution committed to providing quality education in the fields of technology, business, and liberal arts.</p>
+        </div>
+      </div>
+
+      <!-- STUDENT DASHBOARD PAGE -->
+      <div id="page-studentdash" class="page-section" style="display:none;">
+        <div class="dash-grid">
+
+          <!-- LEFT: PROFILE CARD -->
+          <div class="profile-card">
+            <div class="profile-avatar-wrap">
+              <div class="profile-avatar">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="white" stroke-width="1.5"/><circle cx="12" cy="7" r="4" stroke="white" stroke-width="1.5"/></svg>
+              </div>
+            </div>
+            <h3 class="profile-name">Student User</h3>
+            <p class="profile-course">BS Information Technology</p>
+            <p class="profile-year">1<sup>st</sup> Year</p>
+            <div class="profile-info">
+              <div class="profile-info-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4V4z" stroke="#3b82c4" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 8l8 5 8-5" stroke="#3b82c4" stroke-width="1.8"/></svg>
+                <span>student@gmail.com</span>
+              </div>
+              <div class="profile-info-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 5.18 2 2 0 015.09 3h3a2 2 0 012 1.72c.13 1 .38 1.98.74 2.91a2 2 0 01-.45 2.11L9.1 11a16 16 0 006.9 6.9l1.26-1.27a2 2 0 012.11-.45c.93.36 1.9.61 2.91.74A2 2 0 0122 16.92z" stroke="#3b82c4" stroke-width="1.8"/></svg>
+                <span>09xxxxxxxxx</span>
+              </div>
+              <div class="profile-info-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#3b82c4" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#3b82c4" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <span>Member since: July 2025</span>
+              </div>
+            </div>
+            <button class="btn-edit" onclick="alert('Edit Profile clicked!')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+              Edit Profile
+            </button>
+          </div>
+
+          <!-- RIGHT: ANNOUNCEMENTS + QUICK LINKS -->
+          <div class="dash-right">
+            <div class="announce-card">
+              <div class="section-title"><span class="title-bar"></span><h3>Latest Announcement</h3></div>
+              <div class="announce-item" onclick="this.classList.toggle('expanded')">
+                <div class="announce-top"><strong>Admission Now Open</strong><span class="badge urgent">Urgent</span></div>
+                <p>First Semester Enrollment for Academic year 2026–2027 is now ongoing for all ICCT Campuses</p>
+                <span class="announce-date">June 14, 2026</span>
+              </div>
+              <div class="announce-item" onclick="this.classList.toggle('expanded')">
+                <div class="announce-top"><strong>Admission Now Open</strong><span class="badge urgent">Urgent</span></div>
+                <p>First Semester Enrollment for Academic year 2026–2027 is now ongoing for all ICCT Campuses</p>
+                <span class="announce-date">June 14, 2026</span>
+              </div>
+            </div>
+            <div class="quicklinks-grid">
+              <div class="quicklink-item" onclick="alert('Contact Us')">
+                <div class="quicklink-icon blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 5.18 2 2 0 015.09 3h3a2 2 0 012 1.72c.13 1 .38 1.98.74 2.91a2 2 0 01-.45 2.11L9.1 11a16 16 0 006.9 6.9l1.26-1.27a2 2 0 012.11-.45c.93.36 1.9.61 2.91.74A2 2 0 0122 16.92z" stroke="#3b82c4" stroke-width="1.8"/></svg>
+                </div>
+                <div class="quicklink-label">Contact Us</div>
+                <div class="quicklink-sub">Get in touch with admission</div>
+              </div>
+              <div class="quicklink-item" onclick="alert('Portal')">
+                <div class="quicklink-icon blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-7 10 7M12 22V10" stroke="#3b82c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="quicklink-label">Portal</div>
+                <div class="quicklink-sub">Go to current student site</div>
+              </div>
+              <div class="quicklink-item" onclick="alert('Help Center')">
+                <div class="quicklink-icon blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#3b82c4" stroke-width="1.8"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#3b82c4" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
+                <div class="quicklink-label">Questions</div>
+                <div class="quicklink-sub">Go to Help center</div>
+              </div>
+              <div class="quicklink-item" onclick="alert('Location')">
+                <div class="quicklink-icon blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" stroke="#3b82c4" stroke-width="1.8"/><circle cx="12" cy="10" r="3" stroke="#3b82c4" stroke-width="1.8"/></svg>
+                </div>
+                <div class="quicklink-label">Location</div>
+                <div class="quicklink-sub">Find our campus</div>
+              </div>
+              <div class="quicklink-item" onclick="alert('Support')">
+                <div class="quicklink-icon blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#3b82c4" stroke-width="1.8"/><circle cx="12" cy="7" r="4" stroke="#3b82c4" stroke-width="1.8"/></svg>
+                </div>
+                <div class="quicklink-label">Support</div>
+                <div class="quicklink-sub">Student services</div>
+              </div>
+              <div class="quicklink-item" onclick="alert('Settings')">
+                <div class="quicklink-icon blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#3b82c4" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="#3b82c4" stroke-width="1.8"/></svg>
+                </div>
+                <div class="quicklink-label">Settings</div>
+                <div class="quicklink-sub">Account preferences</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CALENDAR -->
+          <div class="dash-calendar">
+            <div class="cal-header-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#3b82c4" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#3b82c4" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span class="cal-label">Calendar</span>
+              <button class="cal-nav" onclick="changeMonth2(-1)">&#9664;</button>
+              <span id="calTitle2" class="cal-month-label">June 2026</span>
+              <button class="cal-nav" onclick="changeMonth2(1)">&#9654;</button>
+            </div>
+            <div class="cal-grid2">
+              <div class="cal-day-name">S</div><div class="cal-day-name">M</div>
+              <div class="cal-day-name">T</div><div class="cal-day-name">W</div>
+              <div class="cal-day-name">T</div><div class="cal-day-name">F</div>
+              <div class="cal-day-name">S</div>
+            </div>
+            <div class="cal-grid2" id="calDays2"></div>
+            <div class="view-full-cal" onclick="alert('View Full Calendar')">View Full Calendar →</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- NOTIFICATION PAGE -->
+      <div id="page-notification" class="page-section" style="display:none;">
+        <div class="announce-card">
+          <div class="section-title"><span class="title-bar"></span><h3>All Notifications</h3></div>
+          <div class="announce-item"><div class="announce-top"><strong>Final Exam schedule released</strong><span class="badge urgent">Urgent</span></div><p>Check the assessment page for your schedule.</p><span class="announce-date">June 14, 2026</span></div>
+          <div class="announce-item"><div class="announce-top"><strong>Tuition deadline on June 20</strong><span class="badge academic">Reminder</span></div><p>Make sure your accounts are settled before June 20.</p><span class="announce-date">June 12, 2026</span></div>
+          <div class="announce-item"><div class="announce-top"><strong>Lab Report due June 20</strong><span class="badge academic">Academic</span></div><p>Submit your lab report to your respective professors.</p><span class="announce-date">June 10, 2026</span></div>
+        </div>
+      </div>
+
+      <!-- HELP CENTER PAGE -->
+      <div id="page-helpcenter" class="page-section" style="display:none;">
+        <div class="simple-page">
+          <h2>Help Center</h2>
+          <p>Need help? Contact the ICCT student services office or reach us at support@icct.edu.ph</p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const now    = new Date();
+
+    let currentYear2  = now.getFullYear();
+    let currentMonth2 = now.getMonth();
+
+    function renderCalendar2(year, month) {
+      const el   = document.getElementById('calTitle2');
+      const grid = document.getElementById('calDays2');
+      if (!el || !grid) return;
+      el.textContent = months[month] + ' ' + year;
+      grid.innerHTML = '';
+      const firstDay    = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      for (let i = 0; i < firstDay; i++) grid.appendChild(document.createElement('div'));
+      for (let d = 1; d <= daysInMonth; d++) {
+        const cell = document.createElement('div');
+        cell.className   = 'cal-cell';
+        cell.textContent = d;
+        if (d === now.getDate() && month === now.getMonth() && year === now.getFullYear()) cell.classList.add('today');
+        cell.addEventListener('click', () => {
+          document.querySelectorAll('#calDays2 .cal-cell').forEach(c => c.classList.remove('selected'));
+          cell.classList.add('selected');
+        });
+        grid.appendChild(cell);
+      }
+    }
+
+    function changeMonth2(dir) {
+      currentMonth2 += dir;
+      if (currentMonth2 > 11) { currentMonth2 = 0; currentYear2++; }
+      if (currentMonth2 < 0)  { currentMonth2 = 11; currentYear2--; }
+      renderCalendar2(currentYear2, currentMonth2);
+    }
+
+    renderCalendar2(currentYear2, currentMonth2);
+
+    function showPage(pageId, navEl) {
+      document.querySelectorAll('.page-section').forEach(p => p.style.display = 'none');
+      const target = document.getElementById('page-' + pageId);
+      if (target) target.style.display = 'block';
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      if (navEl) navEl.classList.add('active');
+      if (window.innerWidth < 768) toggleSidebar();
+    }
+
+    function highlightCard(card) {
+      document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('highlighted'));
+      card.classList.add('highlighted');
+    }
+
+    function toggleDone(item) {
+      item.classList.toggle('done');
+      const icon = item.querySelector('.task-icon');
+      if (item.classList.contains('done')) {
+        icon.textContent = '✓'; icon.classList.remove('warning'); icon.classList.add('done-icon');
+      } else {
+        icon.textContent = '!'; icon.classList.add('warning'); icon.classList.remove('done-icon');
+      }
+    }
+
+    const trigger  = document.getElementById('profileTrigger');
+    const dropdown = document.getElementById('profileDropdown');
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+      document.getElementById('notifDropdown').classList.remove('open');
+    });
+
+    function toggleNotif(e) {
+      e.stopPropagation();
+      document.getElementById('notifDropdown').classList.toggle('open');
+      dropdown.classList.remove('open');
+    }
+
+    document.addEventListener('click', () => {
+      dropdown.classList.remove('open');
+      document.getElementById('notifDropdown').classList.remove('open');
+    });
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

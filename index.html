@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +10,13 @@
   
 </head>
 <body>
-
-    <div class="page">
+  <div class="page">
     <div class="card">
 
     
       <div class="panel-left">
         <img class="bg-img"
-             src="https://raw.githubusercontent.com/jessicacorpuz/Student-Portal/refs/heads/main/img/antipolocampus.jpg"
+             src= "icct campus.jpg"
              alt="ICCT Antipolo Campus">
         <div class="overlay"></div>
 
@@ -68,9 +68,8 @@
           <input type="checkbox" id="remember">
           <label for="remember">Remember me</label>
         </div>
-        <button type="button" class="btn-login" onclick="handleLogin()">
-         Log in
-        </button>
+       <a href="home.html" class="btn-login">
+        <button class="btn-login" onclick="handleLogin()">Log in</button>
          </a>
           
         
@@ -78,9 +77,8 @@
         <div class="forgot-link"><a href="#">Forgot password</a></div>
 
         <div class="divider"><hr><span>or</span><hr></div>
-        <button class="btn-create" onclick="showRegister()">
-        Create Account
-        </button>
+        <a href="register.html" class="btn-create">
+            <button class="btn-create" onclick="handleCreateAccount()">Create Account</button>
         </a>
         
 
@@ -88,233 +86,22 @@
       </div>
 
     </div>
-    </div>
-    
-    <div id="registerPage" style="display:none;">
-    <div class="page">
-        <div class="card">
+  </div>
 
-            <div class="card-header">
-                <h1>Create Your Account</h1>
-                <p class="subtitle">Enter your student information</p>
-            </div>
+  <script>
+    function handleLogin() {
+      const id = document.getElementById('studentId').value.trim();
+      const pw = document.getElementById('password').value.trim();
+      if (!id || !pw) {
+        alert('Please enter your Student ID and password.');
+        return;
+      }
+      alert('Logging in as: ' + id);
+    }
 
-            <div class="form-grid">
-
-                <div class="form-col">
-
-                    <div class="form-group">
-                        <label>Student ID</label>
-                        <input id="regStudentId" type="text">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input id="regFullname" type="text">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Date of Birth</label>
-                        <input type="date">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Department</label>
-                        <input id="regDepartment" type="text">
-                    </div>
-
-                </div>
-
-                <div class="form-col">
-
-                    <div class="form-group">
-                        <label>Campus</label>
-                        <input type="text" value="Antipolo Campus">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input id="regEmail" type="email">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input id="regPassword" type="password">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input id="regConfirmPassword" type="password">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="terms-row">
-                <input type="checkbox" id="terms">
-                <label>I agree to Terms and Privacy Policy</label>
-            </div>
-
-            <div class="btn-row">
-                <button class="btn-create" onclick="handleRegister()">
-                    Create Account
-                </button>
-            </div>
-
-            <div class="login-link">
-                Already have an account?
-                <a href="#" onclick="showLogin()">Sign In</a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-    <div id="portal" style="display:none;">
-
-        <header class="topbar">
-            <div class="portal-logo">
-                <img src="https://jaredbona.github.io/emt-project/img/ICCT.png">
-                <div>
-                    <h2>Student Portal</h2>
-                    <p>Student Academic Information System</p>
-                </div>
-            </div>
-
-            <div class="search-box">
-                <input type="text" placeholder="Search...">
-            </div>
-
-            <div class="top-icons">
-
-    <div class="notification-container">
-
-        <button id="notifBtn">
-            <img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/bell-line-icon.png" width="25">
-            <span class="notif-badge">3</span>
-        </button>
-
-        <div id="notificationPopup" class="notification-popup">
-            <h3>Notifications</h3>
-
-            <div class="notification-item">
-                New grade has been posted.
-            </div>
-
-            <div class="notification-item">
-                Enrollment starts next week.
-            </div>
-
-            <div class="notification-item">
-                New announcement from Registrar.
-            </div>
-        </div>
-
-    </div>
-
-    <div class="user-info">
-    <img src="profile.jpg" class="profile">
-
-    <div>
-        <h4 id="userName">Student Name</h4>
-        <p>Student Portal</p>
-    </div>
-</div>
-
-</div>
-        </header>
-
-        <div class="portal-container">
-
-            <aside class="sidebar">
-
-                <button onclick="showSection('home')">
-                    Home
-                </button>
-
-                <button onclick="showSection('aboutus')">
-                    About Us
-                </button>
-
-                <button onclick="showSection('dashboard')">
-                    Student Dashboard
-                </button>
-
-                <button onclick="showSection('helpcenter')">
-                    Help Center
-                </button>
-
-            </aside>
-
-            <main class="content-area">
-
-                <section id="home" class="portal-section">
-                    <img src="https://raw.githubusercontent.com/jessicacorpuz/Student-Portal/refs/heads/main/img/antipolocampus.jpg">
-                    <h1>Welcome to SAIS</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <h2>Newsletters</h2>
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FNewsbytesICCT%2Fposts%2Fpfbid0Zfhmqis1TESWvPM8DiPRtimsE2CDhmdUmFgatENw8at8TtsuMhrt1xJYgGU4F8rVl&show_text=true&width=500" width="500" height="811" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> 
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FNewsbytesICCT%2Fposts%2Fpfbid02Jq21vWY7P36zZ7hUxhR6Zu8CAHcUhiJRMtCPSmQt87nkECkxnrvszbxTvxy58Rnml&show_text=true&width=500" width="500" height="811" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FNewsbytesICCT%2Fposts%2Fpfbid0NanRGcjn98bWRrJQF8ihBhW47Vm5bGqmJcA38YukJYW4qe6ohYtSzMhECAFmN8Wsl&show_text=true&width=500" width="500" height="811" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FIM4ICCT%2Fposts%2Fpfbid0iQf5gegrsipy41F6ejSj9NxV5gD8j6hQFDEAqEpbFKpn3Q48X9bMZCFWN2UqRmEl&show_text=true&width=500" width="500" height="576" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FIM4ICCT%2Fposts%2Fpfbid02Un5rfQZEtLatjBowkTiJ5ieDzkBBy9YqHyHzVXWpVifhLNN4TDMpYxBMt5X8hYecl&show_text=true&width=500" width="500" height="576" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FNewsbytesICCT%2Fposts%2Fpfbid02s5ZxbodvVX7BQyFenAYQppMYCY2VPM7aCX9o82Wu1ynbVG8PpkFRFw43FuLRDYosl&show_text=true&width=500" width="500" height="811" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                </section>
-
-                <section id="aboutus" class="portal-section">
-    <h1>Map</h1>
-    <h1>Antipolo Campus</h1>
-
-    <h2 id="title">First Floor</h2>
-
-    <img id="img1" src="" width="250">
-    <img id="img2" src="" width="250">
-    <img id="img3" src="" width="250">
-
-    <br><br>
-
-    <button onclick="prevSlide()">⬅</button>
-    <button onclick="nextSlide()">➡</button>
-</section>
-
-                <section id="dashboard" class="portal-section">
-                    <h1>Student Dashboard</h1>
-                    <p>Grades, schedules, announcements, and subjects.</p>
-                </section>
-
-                <section id="notifications" class="portal-section">
-                    <h1>Notifications</h1>
-                    <p>No new notifications.</p>
-                </section>
-
-                <section id="helpcenter" class="portal-section">
-                    <h1>Help Center</h1>
-                    <h2>Knowledge Base</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <h2>Frequently Asked Questions (FAQ)</h2>
-                    <h3>How much is the tuition fee?</h3> -->
-                    <p>The tuition fee is ranging around 2,000 pesos but there are miscellanous fees.</p>
-                    <h3>When does the school year start?</h3>
-                    <p>The school year usually starts at around agugust.</p>
-                    <h3>Does ICCT offer Senior High School(SHS)?</h3>
-                    <p>Yes it offers senior high school</p>
-                    <h3>What are the strands that there senior high school department offer?</h3>
-                    <p>It offers all of the strands including TVLT(ICT) and TVLT(HE).</p>
-                    <h3>Does ICCT Senior High School department accept DEPED SHS vouchers? </h3>
-                    <p>Yes they accept DEPED SHS vouchers.</p>
-                    <h3>Does ICCT accept ALS graduates for there college courses?</h3>
-                    <p>Yes they accept ALS graduates for there college courses.</p>
-                </section>
-
-            </main>
-
-        </div>
-
-    </div>
-  
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="script.js"></script>
-
+    function handleCreateAccount() {
+      alert('Redirecting to account registration…');
+    }
+  </script>
 </body>
 </html>
