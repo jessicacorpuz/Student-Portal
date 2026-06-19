@@ -1,19 +1,3 @@
-function handleLogin() {
-
-    const studentId = document.getElementById("studentId").value;
-    const password = document.getElementById("password").value;
-
-    if(studentId === "" || password === "") {
-        alert("Please enter your Student ID and Password.");
-        return;
-    }
-
-    document.querySelector(".page").style.display = "none";
-    document.getElementById("portal").style.display = "block";
-
-    showSection("home");
-}
-
 const supabaseUrl = "https://jdtwbiiuimbhozdqrcvn.supabase.co/rest/v1/";
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpkdHdiaWl1aW1iaG96ZHFyY3ZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4MTE5NDIsImV4cCI6MjA5NzM4Nzk0Mn0.8qDaxtDB7H0lr3bkIdZpMIC7Mwqx2BtMXiIbGIv8fa0";
 
@@ -22,12 +6,28 @@ const supabase = window.supabase.createClient(
     supabaseKey
 );
 
-function handleLogin(){
+async function handleLogin() {
 
-    const name =
+    const studentId =
         document.getElementById("studentId").value;
 
-    document.getElementById("userName").textContent = name;
+    const password =
+        document.getElementById("password").value;
+
+    const { data, error } = await supabase
+        .from("students")
+        .select("*")
+        .eq("student_id", studentId)
+        .eq("password", password)
+        .single();
+
+    if (error || !data) {
+        alert("Invalid ID or password");
+        return;
+    }
+
+    document.getElementById("userName").textContent =
+        data.full_name;
 
     document.querySelector(".page").style.display = "none";
     document.getElementById("portal").style.display = "block";
@@ -45,29 +45,42 @@ function showLogin(){
     document.querySelector(".page").style.display = "flex";
 }
 
-function handleRegister(){
+async function handleRegister() {
 
-    const id = document.getElementById("regStudentId").value;
-    const fullname = document.getElementById("regFullname").value;
-    const email = document.getElementById("regEmail").value;
-    const password = document.getElementById("regPassword").value;
-    const confirmPassword = document.getElementById("regConfirmPassword").value;
+    const studentId =
+        document.getElementById("regStudentId").value;
 
-    if(!id || !fullname || !email || !password){
-        alert("Please fill out all required fields.");
-        return;
-    }
+    const fullname =
+        document.getElementById("regFullname").value;
 
-    if(password !== confirmPassword){
-        alert("Passwords do not match.");
+    const email =
+        document.getElementById("regEmail").value;
+
+    const password =
+        document.getElementById("regPassword").value;
+
+    const department =
+        document.getElementById("regDepartment").value;
+
+    const { error } = await supabase
+        .from("students")
+        .insert([
+            {
+                student_id: studentId,
+                full_name: fullname,
+                email: email,
+                password: password,
+                department: department
+            }
+        ]);
+
+    if (error) {
+        alert(error.message);
         return;
     }
 
     alert("Account created successfully!");
-
     showLogin();
-
-    document.getElementById("studentId").value = id;
 }
 
 function showSection(sectionId){
