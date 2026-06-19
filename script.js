@@ -1,6 +1,10 @@
+console.log("Script loaded");
+
 const supabaseUrl = "https://jdtwbiiuimbhozdqrcvn.supabase.co";
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpkdHdiaWl1aW1iaG96ZHFyY3ZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4MTE5NDIsImV4cCI6MjA5NzM4Nzk0Mn0.8qDaxtDB7H0lr3bkIdZpMIC7Mwqx2BtMXiIbGIv8fa0";
 const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+console.log("Supabase loaded");
 
 async function handleRegister() {
 
@@ -126,15 +130,15 @@ function showSection(sectionId){
 const notifBtn = document.getElementById("notifBtn");
 const notificationPopup = document.getElementById("notificationPopup");
 
-notifBtn.addEventListener("click", () => {
-
-    if(notificationPopup.style.display === "block"){
-        notificationPopup.style.display = "none";
-    } else {
-        notificationPopup.style.display = "block";
-    }
-
-});
+if (notifBtn) {
+    notifBtn.addEventListener("click", () => {
+        if(notificationPopup.style.display === "block"){
+            notificationPopup.style.display = "none";
+        } else {
+            notificationPopup.style.display = "block";
+        }
+    });
+}
 
 document.addEventListener("click", (e) => {
 
