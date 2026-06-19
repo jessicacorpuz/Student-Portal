@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antipolo Campus Map</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="top-bar">
+        <h1>Antipolo Campus Map</h1>
+
+        <input
+            type="text"
+            placeholder="Search a room, office, floor..."
+            class="search">
+    </div>
+
+    <div class="main-content">
+
+        <div class="carousel-panel">
+
+            <button class="prev" onclick="moveSlide(-1)">?</button>
+
+            <div class="slider-container">
+                <div class="slider" id="slider">
+
+                    <div class="card">
+                        <img src="https://raw.githubusercontent.com/jessicacorpuz/Student-Portal/main/img/admission.jpg">
+                        <h3>Admission Office</h3>
+                        <p>1st Floor</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://raw.githubusercontent.com/jessicacorpuz/Student-Portal/main/img/1stflralt.jpg">
+                        <h3>First Floor</h3>
+                        <p>Academic Offices</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://raw.githubusercontent.com/jessicacorpuz/Student-Portal/main/img/2ndflr2.jpg">
+                        <h3>Second Floor</h3>
+                        <p>Academic Area</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://raw.githubusercontent.com/jessicacorpuz/Student-Portal/main/img/3rdflr2.jpg">
+                        <h3>Third Floor</h3>
+                        <p>Academic Area</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://raw.githubusercontent.com/jessicacorpuz/Student-Portal/main/img/gymdown.jpg">
+                        <h3>Gymnasium</h3>
+                        <p>4th Floor</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://raw.githubusercontent.com/jessicacorpuz/Student-Portal/main/img/library1.jpg">
+                        <h3>Library</h3>
+                        <p>5th Floor</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="next" onclick="moveSlide(1)">?</button>
+
+        </div>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h2>8</h2>
+            <p>Campus Facilities</p>
+        </div>
+
+        <div class="stat">
+            <h2>38</h2>
+            <p>Available Courses</p>
+        </div>
+
+        <div class="stat">
+            <h2>Top 10</h2>
+            <p>PRC Top Notchers</p>
+        </div>
+
+        <div class="stat">
+            <h2>33 Years</h2>
+            <p>In Rizal</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
