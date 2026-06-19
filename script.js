@@ -14,14 +14,90 @@ function handleLogin() {
     showSection("home");
 }
 
-function showSection(sectionId) {
+function handleLogin(){
 
-    document.querySelectorAll(".portal-section").forEach(section => {
+    const name =
+        document.getElementById("studentId").value;
+
+    document.getElementById("userName").textContent = name;
+
+    document.querySelector(".page").style.display = "none";
+    document.getElementById("portal").style.display = "block";
+
+    showSection("home");
+}
+
+function showRegister(){
+    document.querySelector(".page").style.display = "none";
+    document.getElementById("registerPage").style.display = "block";
+}
+
+function showLogin(){
+    document.getElementById("registerPage").style.display = "none";
+    document.querySelector(".page").style.display = "flex";
+}
+
+function handleRegister(){
+
+    const id = document.getElementById("regStudentId").value;
+    const fullname = document.getElementById("regFullname").value;
+    const email = document.getElementById("regEmail").value;
+    const password = document.getElementById("regPassword").value;
+    const confirmPassword = document.getElementById("regConfirmPassword").value;
+
+    if(!id || !fullname || !email || !password){
+        alert("Please fill out all required fields.");
+        return;
+    }
+
+    if(password !== confirmPassword){
+        alert("Passwords do not match.");
+        return;
+    }
+
+    alert("Account created successfully!");
+
+    showLogin();
+
+    document.getElementById("studentId").value = id;
+}
+
+function showSection(sectionId){
+
+    document.querySelectorAll(".portal-section").forEach(section=>{
         section.style.display = "none";
     });
 
     document.getElementById(sectionId).style.display = "block";
+
+    document.querySelectorAll(".sidebar button").forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    event.target.classList.add("active");
 }
+
+const notifBtn = document.getElementById("notifBtn");
+const notificationPopup = document.getElementById("notificationPopup");
+
+notifBtn.addEventListener("click", () => {
+
+    if(notificationPopup.style.display === "block"){
+        notificationPopup.style.display = "none";
+    } else {
+        notificationPopup.style.display = "block";
+    }
+
+});
+
+document.addEventListener("click", (e) => {
+
+    if(!e.target.closest(".notification-container")){
+        notificationPopup.style.display = "none";
+    }
+
+});
+
 let slides = [
 {
 title: "First Floor",
