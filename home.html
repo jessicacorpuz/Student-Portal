@@ -11,7 +11,7 @@
 
   <header class="topbar">
     <div class="topbar-left">
-      <img src="ICCT LOGO.jpg" alt="ICCT Logo" class="topbar-logo">
+      <img src="img/icctlogo.png" alt="ICCT Logo" class="topbar-logo">
       <div class="topbar-title">
         <span class="portal-name">Student Portal</span>
         <span class="portal-sub">Student Academic Information System</span>
@@ -95,10 +95,16 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             Notification
           </a>
-          <a href="#" class="nav-item" onclick="showPage('helpcenter', this)">
+          <a href="#" class="nav-item" id="helpCenterNavItem" onclick="showPage('helpcenter', this)">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             Help Center
           </a>
+          <div class="nav-submenu" id="helpSubmenu">
+            <a href="#" class="nav-subitem active" id="subitem-faq" onclick="showHelpView('faq', this)">FAQ</a>
+            <a href="#" class="nav-subitem" id="subitem-contact" onclick="showHelpView('contact', this)">Contact Support</a>
+            <a href="#" class="nav-subitem" id="subitem-privacy" onclick="showHelpSubPage('privacy', this)">Privacy and Policy</a>
+            <a href="#" class="nav-subitem" id="subitem-terms" onclick="showHelpSubPage('terms', this)">Terms &amp; Conditions</a>
+          </div>
         </nav>
       </div>
       <div class="sidebar-bottom">
@@ -120,7 +126,7 @@
 
         <!-- HERO BANNER -->
         <div class="hero-banner">
-          <img src="icct campus.jpg" alt="ICCT Campus" class="hero-img">
+          <img src="img/antipolocampus.jpg" alt="ICCT Campus" class="hero-img">
           <div class="hero-overlay"></div>
           <div class="hero-wave">
             <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -146,99 +152,43 @@
         <div class="programs-section">
           <h2 class="programs-title">PROGRAMS / COURSE OFFERED</h2>
           <div class="programs-grid">
-
-            <!-- College of Health Science -->
-            <!-- Icon: Heart by Good Ware – Flaticon (https://www.flaticon.com/free-icons/heart) -->
             <div class="program-card">
               <div class="program-icon">
-                <img
-                  src="heart.png"
-                  alt="Health Science icon"
-                  width="36"
-                  height="36"
-                  style="object-fit:contain;"
-                >
+                <img src="img/heart.png" alt="Health Science icon" width="36" height="36" style="object-fit:contain;">
               </div>
               <div class="program-name">College of<br>Health Science</div>
             </div>
-
-            <!-- College of Teacher Education -->
-            <!-- Icon: Student by Muhammad Atif – Flaticon (https://www.flaticon.com/free-icons/student) -->
             <div class="program-card">
               <div class="program-icon">
-                <img
-                  src="person book.png"
-                  alt="Teacher Education icon"
-                  width="36"
-                  height="36"
-                  style="object-fit:contain;"
-                >
+                <img src="img/Person Book.png" alt="Teacher Education icon" width="36" height="36" style="object-fit:contain;">
               </div>
               <div class="program-name">College of<br>Teacher Education</div>
             </div>
-
-            <!-- College of Business and Accountancy -->
-            <!-- Icon: Briefcase by Those Icons – Flaticon (https://www.flaticon.com/free-icons/briefcase) -->
             <div class="program-card">
               <div class="program-icon">
-                <img
-                  src="briefcase.png"
-                  alt="Business and Accountancy icon"
-                  width="36"
-                  height="36"
-                  style="object-fit:contain;"
-                >
+                <img src="img/briefcase.png" alt="Business and Accountancy icon" width="36" height="36" style="object-fit:contain;">
               </div>
               <div class="program-name">College of<br>Business and Accountancy</div>
             </div>
-
-            <!-- College of Computer Studies -->
-            <!-- Icon: Processor by Iconic Panda – Flaticon (https://www.flaticon.com/free-icons/processor) -->
             <div class="program-card">
               <div class="program-icon">
-                <img
-                  src="chip.png"
-                  alt="Computer Studies icon"
-                  width="36"
-                  height="36"
-                  style="object-fit:contain;"
-                >
+                <img src="img/chip.png" alt="Computer Studies icon" width="36" height="36" style="object-fit:contain;">
               </div>
               <div class="program-name">College of<br>Computer Studies</div>
             </div>
-
-            <!-- College of Criminology and Administration -->
-            <!-- Icon: Law by Freepik – Flaticon (https://www.flaticon.com/free-icons/law) -->
             <div class="program-card">
               <div class="program-icon">
-                <img
-                  src="scales-of-justice.png"
-                  alt="Criminology and Administration icon"
-                  width="36"
-                  height="36"
-                  style="object-fit:contain;"
-                >
+                <img src="img/scales-of-justice.png" alt="Criminology and Administration icon" width="36" height="36" style="object-fit:contain;">
               </div>
               <div class="program-name">College of<br>Criminology and Administration</div>
             </div>
-
-            <!-- International School of Hospitality and Management -->
-            <!-- Icon: Hospitality by Freepik – Flaticon (https://www.flaticon.com/free-icons/hospitality) -->
             <div class="program-card">
               <div class="program-icon">
-                <img
-                  src="airplane.png"
-                  alt="Hospitality and Management icon"
-                  width="36"
-                  height="36"
-                  style="object-fit:contain;"
-                >
+                <img src="img/airplane.png" alt="Hospitality and Management icon" width="36" height="36" style="object-fit:contain;">
               </div>
               <div class="program-name">International School of<br>Hospitality and Management</div>
             </div>
-
           </div>
-
           <div class="programs-footer">
             <button class="btn-view-all" onclick="alert('View all programs')">View all programs</button>
           </div>
@@ -246,11 +196,7 @@
 
         <!-- NEWS & EVENTS SECTION -->
         <div class="news-events-grid">
-
-          <!-- LEFT COLUMN: Featured News + Upcoming Events -->
           <div class="news-events-left">
-
-            <!-- FEATURED NEWS -->
             <div class="featured-news-card">
               <div class="featured-news-img">
                 <img src="featured-news-1.jpg" alt="ICCT Colleges Sports Festival 2026">
@@ -262,15 +208,12 @@
                 <a href="#" class="featured-news-link" onclick="alert('Read More clicked'); return false;">Read More &gt;</a>
               </div>
             </div>
-
-            <!-- UPCOMING EVENTS -->
             <div class="upcoming-events-card">
               <div class="upcoming-events-header">
                 <h3>UPCOMING EVENTS</h3>
                 <span class="upcoming-events-count">4 Upcoming Events</span>
               </div>
               <div class="upcoming-events-grid">
-
                 <div class="event-item" onclick="alert('Final Seminar Series: COCA, COEDT & CSS')">
                   <div class="event-icon red">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="4" stroke="white" stroke-width="1.8"/><path d="M2 21v-2a4 4 0 014-4h2a4 4 0 014 4v2" stroke="white" stroke-width="1.8"/><circle cx="17" cy="7" r="3" stroke="white" stroke-width="1.8"/><path d="M22 21v-1.5a3.5 3.5 0 00-2.5-3.36" stroke="white" stroke-width="1.8"/></svg>
@@ -280,7 +223,6 @@
                     <span class="event-date">June 19 &amp; 22, 2026</span>
                   </div>
                 </div>
-
                 <div class="event-item" onclick="alert('CSS College Day 2026')">
                   <div class="event-icon yellow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 10L12 5 2 10l10 5 10-5z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5" stroke="white" stroke-width="1.8"/></svg>
@@ -290,7 +232,6 @@
                     <span class="event-date">June 23 to 24, 2026</span>
                   </div>
                 </div>
-
                 <div class="event-item" onclick="alert('COEDT: Brigada Eskuwela')">
                   <div class="event-icon green">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 11l2 2 4-4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -300,7 +241,6 @@
                     <span class="event-date">July 22 to 23, 2026</span>
                   </div>
                 </div>
-
                 <div class="event-item" onclick="alert('The Founder\'s Day 2026')">
                   <div class="event-icon blue">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.8"/><rect x="13" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.8"/><rect x="3" y="13" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.8"/><rect x="13" y="13" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.8"/></svg>
@@ -310,17 +250,14 @@
                     <span class="event-date">July 29, 2026</span>
                   </div>
                 </div>
-
               </div>
             </div>
-
           </div>
 
-          <!-- RIGHT COLUMN: Spotlight News -->
           <div class="spotlight-news-card">
             <h3 class="spotlight-title">Spotlight News</h3>
             <div class="spotlight-img">
-              <img src="spotlight-news-1.jpg" alt="Enrollment ongoing at ICCT Colleges">
+              <img src="img/ENROLL.jpg" alt="Enrollment ongoing at ICCT Colleges">
             </div>
             <h4 class="spotlight-headline">Enrollment Ongoing at ICCT Colleges!</h4>
             <p class="spotlight-text">
@@ -330,21 +267,18 @@
               <a href="https://skolaris.icct.edu.ph" target="_blank" rel="noopener">Enrollment Ongoing at ICCT Colleges!</a>
             </p>
           </div>
-
         </div>
 
         <!-- SITE FOOTER -->
         <footer class="site-footer">
           <div class="footer-grid">
-
             <div class="footer-brand">
-              <img src="ICCT LOGO.jpg" alt="ICCT Logo" class="footer-logo">
+              <img src="img/icctlogo.png" alt="ICCT Logo" class="footer-logo">
               <div>
                 <span class="footer-brand-name">ICCT COLLEGES</span>
                 <span class="footer-brand-tag">Providing quality and accessible education.</span>
               </div>
             </div>
-
             <div class="footer-col">
               <span class="footer-col-title">Quick Links</span>
               <a href="#" onclick="showPage('home', document.querySelector('.nav-item')); return false;">Home</a>
@@ -352,7 +286,6 @@
               <a href="#" onclick="alert('Campus Map'); return false;">Campus Map</a>
               <a href="#" onclick="alert('FAQ'); return false;">FAQ</a>
             </div>
-
             <div class="footer-col">
               <span class="footer-col-title">Contact Us</span>
               <span class="footer-text">ICCT Colleges Building,<br>Sumulong Extension Street,<br>Brgy. San Roque, Antipolo City, Rizal</span>
@@ -360,12 +293,11 @@
               <a href="mailto:antipolo@icct.edu.ph">antipolo@icct.edu.ph</a>
               <a href="mailto:info@icct.edu.ph">info@icct.edu.ph</a>
             </div>
-
             <div class="footer-col">
               <span class="footer-col-title">Official Pages</span>
               <a href="#" onclick="alert('Official Website'); return false;">Official Website</a>
+              <a href="#" onclick="showHelpSubPage('privacy', document.getElementById('subitem-privacy')); return false;">Privacy Policy</a>
             </div>
-
             <div class="footer-col">
               <span class="footer-col-title">Follow Us</span>
               <div class="footer-social">
@@ -380,7 +312,6 @@
                 </a>
               </div>
             </div>
-
           </div>
           <div class="footer-bottom">
             &copy; 2026 ICCT Colleges. All rights reserved
@@ -400,8 +331,6 @@
       <!-- STUDENT DASHBOARD PAGE -->
       <div id="page-studentdash" class="page-section" style="display:none;">
         <div class="dash-grid">
-
-          <!-- LEFT: PROFILE CARD -->
           <div class="profile-card">
             <div class="profile-avatar-wrap">
               <div class="profile-avatar">
@@ -431,7 +360,6 @@
             </button>
           </div>
 
-          <!-- RIGHT: ANNOUNCEMENTS + QUICK LINKS -->
           <div class="dash-right">
             <div class="announce-card">
               <div class="section-title"><span class="title-bar"></span><h3>Latest Announcement</h3></div>
@@ -448,51 +376,38 @@
             </div>
             <div class="quicklinks-grid">
               <div class="quicklink-item" onclick="alert('Contact Us')">
-                <div class="quicklink-icon blue">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 5.18 2 2 0 015.09 3h3a2 2 0 012 1.72c.13 1 .38 1.98.74 2.91a2 2 0 01-.45 2.11L9.1 11a16 16 0 006.9 6.9l1.26-1.27a2 2 0 012.11-.45c.93.36 1.9.61 2.91.74A2 2 0 0122 16.92z" stroke="#3b82c4" stroke-width="1.8"/></svg>
-                </div>
+                <div class="quicklink-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 5.18 2 2 0 015.09 3h3a2 2 0 012 1.72c.13 1 .38 1.98.74 2.91a2 2 0 01-.45 2.11L9.1 11a16 16 0 006.9 6.9l1.26-1.27a2 2 0 012.11-.45c.93.36 1.9.61 2.91.74A2 2 0 0122 16.92z" stroke="#3b82c4" stroke-width="1.8"/></svg></div>
                 <div class="quicklink-label">Contact Us</div>
                 <div class="quicklink-sub">Get in touch with admission</div>
               </div>
               <div class="quicklink-item" onclick="alert('Portal')">
-                <div class="quicklink-icon blue">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-7 10 7M12 22V10" stroke="#3b82c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
+                <div class="quicklink-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-7 10 7M12 22V10" stroke="#3b82c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                 <div class="quicklink-label">Portal</div>
                 <div class="quicklink-sub">Go to current student site</div>
               </div>
               <div class="quicklink-item" onclick="alert('Help Center')">
-                <div class="quicklink-icon blue">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#3b82c4" stroke-width="1.8"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#3b82c4" stroke-width="1.8" stroke-linecap="round"/></svg>
-                </div>
+                <div class="quicklink-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#3b82c4" stroke-width="1.8"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#3b82c4" stroke-width="1.8" stroke-linecap="round"/></svg></div>
                 <div class="quicklink-label">Questions</div>
                 <div class="quicklink-sub">Go to Help center</div>
               </div>
               <div class="quicklink-item" onclick="alert('Location')">
-                <div class="quicklink-icon blue">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" stroke="#3b82c4" stroke-width="1.8"/><circle cx="12" cy="10" r="3" stroke="#3b82c4" stroke-width="1.8"/></svg>
-                </div>
+                <div class="quicklink-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" stroke="#3b82c4" stroke-width="1.8"/><circle cx="12" cy="10" r="3" stroke="#3b82c4" stroke-width="1.8"/></svg></div>
                 <div class="quicklink-label">Location</div>
                 <div class="quicklink-sub">Find our campus</div>
               </div>
               <div class="quicklink-item" onclick="alert('Support')">
-                <div class="quicklink-icon blue">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#3b82c4" stroke-width="1.8"/><circle cx="12" cy="7" r="4" stroke="#3b82c4" stroke-width="1.8"/></svg>
-                </div>
+                <div class="quicklink-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#3b82c4" stroke-width="1.8"/><circle cx="12" cy="7" r="4" stroke="#3b82c4" stroke-width="1.8"/></svg></div>
                 <div class="quicklink-label">Support</div>
                 <div class="quicklink-sub">Student services</div>
               </div>
               <div class="quicklink-item" onclick="alert('Settings')">
-                <div class="quicklink-icon blue">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#3b82c4" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="#3b82c4" stroke-width="1.8"/></svg>
-                </div>
+                <div class="quicklink-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#3b82c4" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="#3b82c4" stroke-width="1.8"/></svg></div>
                 <div class="quicklink-label">Settings</div>
                 <div class="quicklink-sub">Account preferences</div>
               </div>
             </div>
           </div>
 
-          <!-- CALENDAR -->
           <div class="dash-calendar">
             <div class="cal-header-row">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#3b82c4" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#3b82c4" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -510,25 +425,244 @@
             <div class="cal-grid2" id="calDays2"></div>
             <div class="view-full-cal" onclick="alert('View Full Calendar')">View Full Calendar →</div>
           </div>
-
         </div>
       </div>
 
       <!-- NOTIFICATION PAGE -->
       <div id="page-notification" class="page-section" style="display:none;">
-        <div class="announce-card">
-          <div class="section-title"><span class="title-bar"></span><h3>All Notifications</h3></div>
-          <div class="announce-item"><div class="announce-top"><strong>Final Exam schedule released</strong><span class="badge urgent">Urgent</span></div><p>Check the assessment page for your schedule.</p><span class="announce-date">June 14, 2026</span></div>
-          <div class="announce-item"><div class="announce-top"><strong>Tuition deadline on June 20</strong><span class="badge academic">Reminder</span></div><p>Make sure your accounts are settled before June 20.</p><span class="announce-date">June 12, 2026</span></div>
-          <div class="announce-item"><div class="announce-top"><strong>Lab Report due June 20</strong><span class="badge academic">Academic</span></div><p>Submit your lab report to your respective professors.</p><span class="announce-date">June 10, 2026</span></div>
+        <div class="notice-hero">
+          <img src="img/library2.jpg" alt="ICCT Library" class="notice-hero-img">
+          <div class="notice-hero-overlay"></div>
+          <div class="notice-hero-content">
+            <div class="notice-hero-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h1 class="notice-hero-title">Notice Board</h1>
+          </div>
+        </div>
+        <div class="notice-layout">
+          <div class="notice-categories">
+            <button class="notice-cat-all active" onclick="filterNotif('all', this)">All Notication</button>
+            <div class="notice-cat-list">
+              <div class="notice-cat-item" onclick="filterNotif('tour', this)">Tour and Event Updates</div>
+              <div class="notice-cat-item" onclick="filterNotif('admission', this)">Admission and Application</div>
+              <div class="notice-cat-item" onclick="filterNotif('campus', this)">Campus Announcement</div>
+            </div>
+          </div>
+          <div class="notice-list">
+            <div class="notice-card" data-cat="admission" onclick="selectNotice(this)">
+              <p>ICCT Upcoming Enrollment Schedule.</p>
+            </div>
+            <div class="notice-card" data-cat="admission" onclick="selectNotice(this)">
+              <p>Official Registration &amp; Assessment - You Are Now Officially Enrolled!.</p>
+            </div>
+            <div class="notice-card active" data-cat="campus" onclick="selectNotice(this)">
+              <p>Drug Test Activity Reminder – ICCT Colleges Antipolo Campus</p>
+            </div>
+            <div class="notice-card" data-cat="admission" onclick="selectNotice(this)">
+              <p>Tentative Registration &amp; Assessment Created - Payment Required Within 120 Hours</p>
+            </div>
+          </div>
+        </div>
+        <div class="notice-reminder" onclick="alert('Check your class schedule, submit assignment on time and stay updated with announcements')">
+          <div class="notice-reminder-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="#2d6fad" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="notice-reminder-text">
+            <strong>Don't Forget!</strong>
+            <p>Check your class schedule, submit assignment on time and stay updated with announcements</p>
+          </div>
         </div>
       </div>
 
       <!-- HELP CENTER PAGE -->
       <div id="page-helpcenter" class="page-section" style="display:none;">
-        <div class="simple-page">
-          <h2>Help Center</h2>
-          <p>Need help? Contact the ICCT student services office or reach us at support@icct.edu.ph</p>
+
+        <!-- FAQ VIEW -->
+        <div id="helpview-faq" class="help-view">
+          <div class="faq-card">
+            <div class="faq-left">
+              <h2 class="faq-title">Frequently Asked<br>Questions</h2>
+              <div class="faq-search">
+                <input type="text" id="faqSearchInput" placeholder="Search questions here" oninput="filterFaq(this.value)">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#9ba8b5" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="#9ba8b5" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="faq-accordion" id="faqAccordion">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <div class="faq-q">
+                    <span>Grades &amp; Academics</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#2c3440" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="faq-a">
+                    <div class="faq-sub">
+                      <p class="faq-subq">Q: When will my final grades be visible on the portal?</p>
+                      <p>Grades are only visible to students and parents once the subject professor has finalized and encoded them, and the Academic Dean has approved the submission. If a specific subject column is blank, it means the grade is still undergoing faculty evaluation.</p>
+                    </div>
+                    <div class="faq-sub">
+                      <p class="faq-subq">Q: I found an error in my encoded grades. What should I do?</p>
+                      <p>Students cannot edit grade records. If you believe there is a clerical error on your report card, do not submit an IT ticket. Instead, contact your instructor directly so they can file an official Grade Correction Form with the Registrar's Office.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <div class="faq-q">
+                    <span>Accounts &amp; Login Issues</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#2c3440" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="faq-a">
+                    <div class="faq-sub">
+                      <p class="faq-subq">Q: I forgot my password. How can I reset it?</p>
+                      <p><strong>Students &amp; Parents:</strong> Click the "Forgot Password?" link on the login page. Enter your registered student ID or mobile number to receive a one-time reset link via SMS or personal email.</p>
+                      <p><strong>Faculty &amp; Staff:</strong> Password resets for faculty must be processed through the campus IT Helpdesk for security compliance. Please visit the IT office or submit a ticket using your institutional email.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <div class="faq-q">
+                    <span>Accounts &amp; School Fees</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#2c3440" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="faq-a">
+                    <div class="faq-sub">
+                      <p class="faq-subq">Q: How long does it take for my payment to reflect on my portal balance?</p>
+                      <p><strong>Online/Bank Payments:</strong> Payments made via Dragonpay, online bank transfers, or partner payment centers take 24 to 48 hours to validate and sync with your portal dashboard.</p>
+                      <p><strong>On-Campus Cashier:</strong> Payments made directly at the school cashier's window will reflect on your student account instantly.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <div class="faq-q">
+                    <span>Subject Enrollment &amp; Dropping</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#2c3440" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="faq-a">
+                    <div class="faq-sub">
+                      <p class="faq-subq">Q: Can I change my schedule or drop a subject directly through the portal?</p>
+                      <p><strong>During Regular Registration:</strong> Yes, students can use the Subject Enrollment module to select their preferred blocks and sections, provided they meet the prerequisites.</p>
+                      <p><strong>After the Enrollment Period:</strong> The self-enrollment feature will lock. Any further adding, dropping, or changing of subjects must be processed manually through your academic adviser or the Registrar.</p>
+                    </div>
+                    <div class="faq-sub">
+                      <p class="faq-subq">Q: Why am I getting a "Prerequisite Not Met" error during enrollment?</p>
+                      <p>The system checks your academic history automatically. You cannot enroll in advanced IT or major subjects if you haven't passed or completed the required introductory classes from the previous semesters.</p>
+                    </div>
+                    <div class="faq-additional">
+                      <p class="faq-additional-label">Additional Questions:</p>
+                      <div class="faq-mini" onclick="toggleFaqMini(this, event)">
+                        <p class="faq-mini-q">How do I enroll?</p>
+                        <p class="faq-mini-a">Log in to the Student Portal, go to your Student Dashboard, and use the Subject Enrollment module during the official registration period to pick your subjects and section.</p>
+                      </div>
+                      <div class="faq-mini" onclick="toggleFaqMini(this, event)">
+                        <p class="faq-mini-q">Where is the registrar?</p>
+                        <p class="faq-mini-a">The Registrar's Office is at the ICCT Colleges Building, Sumulong Extension Street, Brgy. San Roque, Antipolo City, Rizal.</p>
+                      </div>
+                      <div class="faq-mini" onclick="toggleFaqMini(this, event)">
+                        <p class="faq-mini-q">What are the tuition fees?</p>
+                        <p class="faq-mini-a">Tuition varies by program and year level. Check the Accounting section of your portal or visit the cashier for your specific fee assessment.</p>
+                      </div>
+                      <div class="faq-mini" onclick="toggleFaqMini(this, event)">
+                        <p class="faq-mini-q">What documents are required?</p>
+                        <p class="faq-mini-a">Typical requirements include Form 137/138, a Certificate of Good Moral Character, and a valid ID. Confirm the full checklist with the Admissions Office for your enrollment type.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-empty" id="faqEmpty" style="display:none;">No matching questions found.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CONTACT SUPPORT VIEW -->
+        <div id="helpview-contact" class="help-view" style="display:none;">
+          <div class="contact-hero">
+            <p class="contact-hero-sub">Need assistance? Our support team is here to help.</p>
+            <h2 class="contact-hero-title">Contact Support</h2>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-info-left">
+              <h3 class="contact-info-heading">You may contact us regarding:</h3>
+              <ul class="contact-topic-list">
+                <li>Website navigation issues</li>
+                <li>Account-related concerns</li>
+                <li>Virtual tour problems</li>
+                <li>Incorrect or outdated information</li>
+                <li>General inquiries</li>
+              </ul>
+            </div>
+            <div class="contact-info-divider"></div>
+            <div class="contact-info-right">
+              <h3 class="contact-info-heading">Support Channels</h3>
+              <div class="contact-channel-list">
+                <p><strong>Email:</strong> support@icct.edu.ph</p>
+                <p><strong>Phone:</strong> +63 09181818</p>
+                <p><strong>Office Hours:</strong> Monday to Friday, 8:00 AM – 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-footer-note">
+            Before contacting support, please review the FAQ section as your question may already be answered there.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PRIVACY AND POLICY PAGE -->
+      <div id="page-privacy" class="page-section" style="display:none;">
+        <div class="privacy-page">
+          <div class="privacy-header">
+            <h2 class="privacy-title">Privacy and Policy</h2>
+            <p class="privacy-sub">Your privacy is important to us</p>
+            <p class="privacy-date">Last Updated: May 16, 2026</p>
+          </div>
+          <div class="privacy-card">
+            <p>We value your privacy and are committed to protecting your personal information. This website may collect basic information such as your name, email address, and account details when you register or contact us.</p>
+            <div class="privacy-divider"></div>
+            <div class="section-title">
+              <span class="title-bar"></span>
+              <h3>Information collected through this website is used to:</h3>
+            </div>
+            <ul class="privacy-list">
+              <li>Provide access to website features and services</li>
+              <li>Improve user experience</li>
+              <li>Respond to inquiries and support requests</li>
+              <li>Send important announcements and updates</li>
+            </ul>
+            <p>We do not sell or share your personal information with third parties except when required by law or for website operation purposes.</p>
+            <p>We take reasonable measures to protect your data from unauthorized access, misuse, or disclosure.</p>
+            <p>By using this website, you agree to the collection and use of information as described in this Privacy Policy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TERMS & CONDITIONS PAGE -->
+      <div id="page-terms" class="page-section" style="display:none;">
+        <div class="privacy-page">
+          <div class="privacy-header">
+            <h2 class="privacy-title">Terms &amp; Conditions</h2>
+            <p class="privacy-sub">Your privacy is important to us</p>
+            <p class="privacy-date">Last Updated: May 16, 2026</p>
+          </div>
+          <div class="terms-card">
+            <p>By accessing and using this website, you agree to comply with the following terms and conditions.</p>
+            <p class="terms-label">Users are responsible for:</p>
+            <ul class="privacy-list">
+              <li>Providing accurate information during registration</li>
+              <li>Maintaining the security of their account credentials</li>
+              <li>Using the website in a lawful and respectful manner</li>
+            </ul>
+            <p class="terms-label">Users must not:</p>
+            <ul class="privacy-list">
+              <li>Attempt to gain unauthorized access to any part of the website</li>
+              <li>Use site for harmful, misleading, or inappropriate content</li>
+              <li>Disrupt or interfere with website operations</li>
+            </ul>
+            <p>The information provided on this website is for informational purposes only. While we strive to keep information accurate and updated, we do not guarantee its completeness or accuracy at all times.</p>
+            <p>We reserve the right to modify website features, content, or these terms at any time without prior notice.</p>
+            <p>Continued use of the website constitutes acceptance of any updates to these terms.</p>
+          </div>
         </div>
       </div>
 
@@ -573,13 +707,99 @@
 
     renderCalendar2(currentYear2, currentMonth2);
 
+    // ── CORE showPage: keeps Help Center highlighted for privacy/terms ──
     function showPage(pageId, navEl) {
       document.querySelectorAll('.page-section').forEach(p => p.style.display = 'none');
       const target = document.getElementById('page-' + pageId);
       if (target) target.style.display = 'block';
+
+      // Clear all nav-item highlights
       document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-      if (navEl) navEl.classList.add('active');
+
+      // Pages that belong under Help Center keep Help Center highlighted
+      const helpCenterPages = ['helpcenter', 'privacy', 'terms'];
+      if (helpCenterPages.includes(pageId)) {
+        document.getElementById('helpCenterNavItem').classList.add('active');
+      } else if (navEl) {
+        navEl.classList.add('active');
+      }
+
+      // Open/close submenu
+      const submenu = document.getElementById('helpSubmenu');
+      if (submenu) {
+        submenu.classList.toggle('open', helpCenterPages.includes(pageId));
+      }
+
       if (window.innerWidth < 768) toggleSidebar();
+    }
+
+    // ── showHelpView: FAQ / Contact Support ──
+    function showHelpView(view, el) {
+      // Highlight Help Center nav item
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      document.getElementById('helpCenterNavItem').classList.add('active');
+
+      // Open submenu
+      document.getElementById('helpSubmenu').classList.add('open');
+
+      // Highlight correct subitem
+      document.querySelectorAll('.nav-subitem').forEach(s => s.classList.remove('active'));
+      el.classList.add('active');
+
+      // Show the help center page with the right view
+      document.querySelectorAll('.page-section').forEach(p => p.style.display = 'none');
+      document.getElementById('page-helpcenter').style.display = 'block';
+
+      document.querySelectorAll('.help-view').forEach(v => v.style.display = 'none');
+      document.getElementById('helpview-' + view).style.display = 'block';
+
+      if (window.innerWidth < 768) toggleSidebar();
+    }
+
+    // ── showHelpSubPage: Privacy & Policy / Terms & Conditions ──
+    function showHelpSubPage(pageId, el) {
+      // Highlight Help Center nav item
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      document.getElementById('helpCenterNavItem').classList.add('active');
+
+      // Open submenu
+      document.getElementById('helpSubmenu').classList.add('open');
+
+      // Highlight correct subitem
+      document.querySelectorAll('.nav-subitem').forEach(s => s.classList.remove('active'));
+      if (el) el.classList.add('active');
+
+      // Show the target page
+      document.querySelectorAll('.page-section').forEach(p => p.style.display = 'none');
+      document.getElementById('page-' + pageId).style.display = 'block';
+
+      if (window.innerWidth < 768) toggleSidebar();
+    }
+
+    function toggleFaq(el) {
+      const wasOpen = el.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) el.classList.add('open');
+    }
+
+    function toggleFaqMini(el, event) {
+      event.stopPropagation();
+      el.classList.toggle('open');
+    }
+
+    function filterFaq(value) {
+      const q = value.trim().toLowerCase();
+      let anyVisible = false;
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const match = q === '' || text.includes(q);
+        item.style.display = match ? 'block' : 'none';
+        if (match) {
+          anyVisible = true;
+          item.classList.toggle('open', q !== '');
+        }
+      });
+      document.getElementById('faqEmpty').style.display = anyVisible ? 'none' : 'block';
     }
 
     function highlightCard(card) {
@@ -619,6 +839,19 @@
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
       document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+
+    function filterNotif(cat, el) {
+      document.querySelectorAll('.notice-cat-all, .notice-cat-item').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      document.querySelectorAll('.notice-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+      });
+    }
+
+    function selectNotice(el) {
+      document.querySelectorAll('.notice-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
     }
   </script>
 </body>
