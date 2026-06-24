@@ -2374,44 +2374,7 @@ body {
     font-size: 18px;
   }
 
-  .programs-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .programs-title {
-    font-size: 16px;
-  }
-
-  .program-icon {
-    width: 46px;
-    height: 46px;
-  }
-
-  .featured-news-body {
-    padding: 14px 16px;
-  }
-
-  .featured-news-title {
-    font-size: 15px;
-  }
-
-  .site-footer {
-    padding: 22px 18px 14px;
-  }
-
-  .privacy-card {
-    padding: 18px;
-  }
-
-  .privacy-title {
-    font-size: 21px;
-  }
-
-  .terms-card {
-    padding: 18px;
-  }
-}
-
+  
 
 .aboutcontainer{
     width:1100px;
@@ -2494,4 +2457,43 @@ body {
     color:#2469d8;
     text-decoration:underline;
     font-size:22px;
+}
+
+
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .programs-title {
+    font-size: 16px;
+  }
+
+  .program-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .featured-news-body {
+    padding: 14px 16px;
+  }
+
+  .featured-news-title {
+    font-size: 15px;
+  }
+
+  .site-footer {
+    padding: 22px 18px 14px;
+  }
+
+  .privacy-card {
+    padding: 18px;
+  }
+
+  .privacy-title {
+    font-size: 21px;
+  }
+
+  .terms-card {
+    padding: 18px;
+  }
 }
