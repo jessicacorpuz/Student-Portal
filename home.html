@@ -1078,15 +1078,15 @@
       el.classList.add('active');
     }
 
-    let currentIndex = 0;
+    const slider = document.querySelector('.slider');
+const cards = document.querySelectorAll('.interactivecard');
 
-const slider = document.getElementById("slider");
-const cards = document.querySelectorAll(".card");
+let currentIndex = 0;
 
-function moveSlide(direction){
+function moveSlide(direction) {
 
-    const cardWidth =
-        cards[0].offsetWidth + 20;
+    const visibleCards = 4;
+    const maxIndex = cards.length - visibleCards;
 
     currentIndex += direction;
 
@@ -1094,23 +1094,15 @@ function moveSlide(direction){
         currentIndex = 0;
     }
 
-    if(currentIndex > cards.length - 3){
-        currentIndex = cards.length - 3;
+    if(currentIndex > maxIndex){
+        currentIndex = maxIndex;
     }
+
+    const cardWidth = cards[0].offsetWidth + 20;
 
     slider.style.transform =
         `translateX(-${currentIndex * cardWidth}px)`;
 }
-
-setInterval(() => {
-
-    if(currentIndex >= cards.length - 3){
-        currentIndex = -1;
-    }
-
-    moveSlide(1);
-
-}, 3000);
   </script>
 </body>
 </html>
