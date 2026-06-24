@@ -2685,6 +2685,75 @@ body {
     font-size:20px;
     cursor:pointer;
 }
+
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:35px;
+}
+
+.stat{
+    background:#f8fafc;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    border:1px solid #e5e7eb;
+}
+
+.stat h2{
+    color:#2d6fad;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.stat p{
+    color:#555;
+}
+
+  @media(max-width:900px){
+
+    .aboutcontainer{
+        flex-direction:column;
+    }
+
+    .interactivetop-bar{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .search{
+        width:100%;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .info-card-content{
+        width:220px;
+    }
+
+    .map-container{
+        height:350px;
+    }
+}
+
+@media(max-width:600px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .interactivecard{
+        min-width:220px;
+    }
+
+    .prev,
+    .next{
+        display:none;
+    }
+}
   
   .programs-grid {
     grid-template-columns: repeat(2, 1fr);
