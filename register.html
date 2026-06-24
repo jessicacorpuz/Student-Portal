@@ -120,7 +120,7 @@
   }
 
   const { data, error } =
-    await supabase.auth.signUp({
+    await window.supabaseClient.auth.signUp({
       email,
       password
     });
@@ -131,7 +131,7 @@
   }
 
   const { error: dbError } =
-    await supabase
+    await window.supabaseClient
       .from('students')
       .insert([
         {
