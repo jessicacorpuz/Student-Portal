@@ -8,3 +8,5 @@ const supabase = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
+
+window.supabaseClient = supabaseClient;
