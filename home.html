@@ -1092,40 +1092,49 @@ function moveSlide(direction) {
 
 async function loadUser() {
 
+  console.log("Starting loadUser...");
+
   const {
-    data: { user }
+    data: { user },
+    error: userError
   } = await window.supabaseClient.auth.getUser();
 
+  console.log("User:", user);
+  console.log("User Error:", userError);
+
   if (!user) {
+    alert("No user found. Redirecting to login.");
     window.location.href = "index.html";
     return;
   }
 
   const email = user.email;
 
-  document.getElementById("userEmail").textContent = email;
-  document.getElementById("dropdownEmail").textContent = email;
-
   const { data, error } = await window.supabaseClient
     .from("students")
-    .select("full_name, student_id")
+    .select("*")
     .eq("email", email)
     .single();
 
-  if (!error && data) {
+  console.log("Database data:", data);
+  console.log("Database error:", error);
 
-    document.getElementById("userName").textContent =
-      data.full_name;
-
-    document.getElementById("dropdownName").textContent =
-      data.full_name;
-
-    document.getElementById("userEmail").textContent =
-      data.student_id;
-
-    document.getElementById("dropdownEmail").textContent =
-      data.student_id;
+  if (error) {
+    alert(error.message);
+    return;
   }
+
+  document.getElementById("userName").textContent =
+    data.full_name;
+
+  document.getElementById("dropdownName").textContent =
+    data.full_name;
+
+  document.getElementById("userEmail").textContent =
+    data.student_id;
+
+  document.getElementById("dropdownEmail").textContent =
+    data.student_id;
 }
 
 loadUser();
