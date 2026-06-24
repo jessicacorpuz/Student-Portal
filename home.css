@@ -2456,6 +2456,17 @@ body {
   .home-about-title {
     font-size: 18px;
   }
+}
+
+.simple-page{
+    padding:30px;
+    max-width:1400px;
+    margin:auto;
+}
+
+.simple-page h2{
+    margin-bottom:25px;
+}
 
 .aboutcontainer{
     width:1100px;
