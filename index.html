@@ -98,7 +98,7 @@
     document.getElementById('password').value;
 
   const { error } =
-    await supabase.auth.signInWithPassword({
+    await supabaseClient.auth.signInWithPassword({
       email,
       password
     });
