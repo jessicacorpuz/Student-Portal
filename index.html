@@ -89,7 +89,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase.js"></script>
   <script>
-    async function handleLogin() {
+   async function handleLogin() {
 
   const email =
     document.getElementById('studentId').value.trim();
@@ -98,12 +98,12 @@
     document.getElementById('password').value;
 
   const { error } =
-    await supabaseClient.auth.signInWithPassword({
+    await window.supabaseClient.auth.signInWithPassword({
       email,
       password
     });
 
-  if(error){
+  if (error) {
     alert(error.message);
     return;
   }
