@@ -80,9 +80,7 @@
 
       
       <div class="btn-row">
-        <a href="home.html" class="btn-create">
         <button class="btn-create" onclick="handleRegister()">Create Account</button>
-        </a>
       </div>
 
       <div class="login-link">
@@ -92,30 +90,66 @@
     </div>
   </div>
 
-  <script>
-    function handleRegister() {
-      const id       = document.getElementById('studentId').value.trim();
-      const fullname = document.getElementById('fullname').value.trim();
-      const email    = document.getElementById('email').value.trim();
-      const dept     = document.getElementById('department').value.trim();
-      const pw       = document.getElementById('password').value.trim();
-      const cpw      = document.getElementById('confirmPassword').value.trim();
-      const terms    = document.getElementById('terms').checked;
 
-      if (!id || !email || !dept || !pw || !cpw) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-      if (pw !== cpw) {
-        alert('Passwords do not match.');
-        return;
-      }
-      if (!terms) {
-        alert('Please agree to the Terms of Services and Privacy Policy.');
-        return;
-      }
-      alert('Account created successfully! Welcome, ' + (fullname || id) + '!');
-    }
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script>
+    async function handleRegister() {
+
+  const studentId =
+    document.getElementById('studentId').value.trim();
+
+  const fullName =
+    document.getElementById('fullname').value.trim();
+
+  const email =
+    document.getElementById('email').value.trim();
+
+  const department =
+    document.getElementById('department').value.trim();
+
+  const password =
+    document.getElementById('password').value;
+
+  const confirmPassword =
+    document.getElementById('confirmPassword').value;
+
+  if(password !== confirmPassword){
+    alert("Passwords do not match");
+    return;
+  }
+
+  const { data, error } =
+    await supabase.auth.signUp({
+      email,
+      password
+    });
+
+  if(error){
+    alert(error.message);
+    return;
+  }
+
+  const { error: dbError } =
+    await supabase
+      .from('students')
+      .insert([
+        {
+          student_id: studentId,
+          full_name: fullName,
+          email: email,
+          department: department
+        }
+      ]);
+
+  if(dbError){
+    alert(dbError.message);
+    return;
+  }
+
+  alert("Account created successfully!");
+  window.location.href = "index.html";
+}
   </script>
 </body>
 </html>
