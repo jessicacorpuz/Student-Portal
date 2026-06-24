@@ -2540,7 +2540,6 @@ body {
     font-size:22px;
 }
 
-
 .map-container{
     position:relative;
     width:750px;
@@ -2625,7 +2624,6 @@ body {
     font-weight:bold;
 }
 
-  
 .interactivecontainer{
     max-width:1400px;
     margin:auto;
@@ -2733,7 +2731,6 @@ body {
     color:#2563eb;
 }
   
-
   .programs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
